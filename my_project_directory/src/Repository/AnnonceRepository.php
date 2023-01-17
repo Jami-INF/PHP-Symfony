@@ -38,6 +38,13 @@ class AnnonceRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function listAnnonce()
+    {
+        $query = $this->createQueryBuilder('a')
+            ->orderBy('a.id', 'DESC')
+            ->getQuery();
+        return $query->getResult();
+    }
 
 //    /**
 //     * @return Annonce[] Returns an array of Annonce objects

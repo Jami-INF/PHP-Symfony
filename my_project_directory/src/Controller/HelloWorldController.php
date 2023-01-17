@@ -9,15 +9,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class HelloWorldController extends AbstractController
 {
     #[Route('/', name: 'app_hello_world')]
-    public function index(): JsonResponse
+    public function home()
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/HelloWorldController.php',
-        ]);
+        return $this->render('home.html.twig');
     }
 
-    #[Route('/hello', name: 'app_hello_name')]
+    #[Route('/helloworld', name: 'app_hello_name')]
     public function hello() 
     {
         return $this->render('hello.html.twig', [
