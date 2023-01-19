@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Form;
+namespace App\form;
 
 use App\Entity\Annonce;
 use Symfony\Component\Form\AbstractType;
@@ -17,7 +17,7 @@ class AnnonceType extends AbstractType
             ->add('Prix')
             ->add('Postal')
             ->add('Date_creation')
-            ->add('categorie')
+            //->add('categorie')
         ;
     }
 

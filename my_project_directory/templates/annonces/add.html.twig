@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Annonce{% endblock %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+
+    {{ form_widget(form) }}
+
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_annonces') }}">back to list</a>
+
+{% endblock %}

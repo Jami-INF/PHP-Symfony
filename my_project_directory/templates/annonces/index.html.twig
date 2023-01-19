@@ -6,6 +6,7 @@
 
 
 {% block body %}
+<a href="{{ path('app_add_annonces') }}" class="btn btn-primary">Ajouter une annonce</a>
 <div class="example-wrapper">
     {% for annonce in annonces %}
         <h2 class="text-primary">{{ annonce.titre }}</h2>
