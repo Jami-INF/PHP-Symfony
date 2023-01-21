@@ -9,8 +9,12 @@
     <a href="{{ path('app_add_annonces') }}" class="btn btn-primary">Ajouter une annonce</a>
     <div class="example-wrapper">
         {% for annonce in annonces %}
-            <h2 class="text-primary">{{ annonce.titre }}</h2>
-            <p>{{ annonce.Contenu }}</p>
+           <div class="card-body">
+               <h2 class="text-primary">{{ annonce.titre }} ({{ annonce.dateCreation|date('d/m/Y') }})</h2>
+               <h3>Categories : {{ annonce.categorie.nom }}</h3>
+               <p>{{ annonce.Contenu }}</p>
+           </div>
+
         {% endfor %}
     </div>
 {% endblock %}
