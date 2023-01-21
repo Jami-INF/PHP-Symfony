@@ -98,12 +98,12 @@ class Annonce
         return $this;
     }
 
-    public function getCategorie(): ?Categorie
+    public function getCategorie()
     {
         return $this->categorie;
     }
 
-    public function setCategorie(?Categorie $categorie): self
+    public function setCategorie($categorie)
     {
         $this->categorie = $categorie;
 

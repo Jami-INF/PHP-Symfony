@@ -4,12 +4,23 @@
 
 {% block body %}
 
+    <a href="{{ path('app_annonces') }}">Back to list</a>
+
     {{ form_start(form) }}
 
-    {{ form_widget(form) }}
+        {{ form_widget(form) }}
+
+        <div class="card-footer">
+            <button class="btn btn-sm btn-primary" type="submit">
+                <i class="ion-paper-airplane picto-pad-right"></i>
+                Ajouter
+            </button>
+        </div>
 
     {{ form_end(form) }}
 
-    <a href="{{ path('app_annonces') }}">back to list</a>
+    
+
+   
 
 {% endblock %}

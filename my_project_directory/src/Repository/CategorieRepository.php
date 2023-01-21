@@ -39,6 +39,11 @@ class CategorieRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAll(): array
+    {
+        return $this->findBy([], ['nom' => 'ASC']);
+    }
+
 //    /**
 //     * @return Categorie[] Returns an array of Categorie objects
 //     */
