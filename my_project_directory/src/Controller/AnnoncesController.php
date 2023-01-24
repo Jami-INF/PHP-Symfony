@@ -26,6 +26,19 @@ class AnnoncesController extends AbstractController
 
     }
 
+    #[Route('/annonces/{id}', name: 'app_annonce')]
+    public function annonceInfo($id, ManagerRegistry $doctrine, Request $request): Response
+    {
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository(Annonce::class);
+        $annonce = $repo->find($id);
+
+        return $this->render('annonces/info.html.twig', [
+            'annonce' => $annonce,
+        ]);
+
+    }
+
     #[Route('/annonces/add', name: 'app_add_annonces')]
     public function addAnnonce(ManagerRegistry $doctrine, Request $request): Response
     {
@@ -41,7 +54,7 @@ class AnnoncesController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $annonce = $form->getData();
             $annonce->setDateCreation(new \DateTime());
-            
+
             $em->persist($annonce);
             $em->flush();
 

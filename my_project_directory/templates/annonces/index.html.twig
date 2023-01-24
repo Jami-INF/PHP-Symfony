@@ -10,7 +10,7 @@
     <div class="example-wrapper">
         {% for annonce in annonces %}
            <div class="card-body">
-               <h2 class="text-primary">{{ annonce.titre }} ({{ annonce.dateCreation|date('d/m/Y') }})</h2>
+               <h2 class="text-primary"><a href="{{ path('app_annonce', { 'id' : annonce.id }) }}">{{ annonce.titre }} ({{ annonce.dateCreation|date('d/m/Y') }})</a></h2>
                <h3>Categories : {{ annonce.categorie.nom }}</h3>
                <p>{{ annonce.Contenu }}</p>
            </div>
