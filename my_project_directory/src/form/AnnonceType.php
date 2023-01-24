@@ -26,7 +26,6 @@ class AnnonceType extends AbstractType
             ->add('Contenu')
             ->add('Prix')
             ->add('Postal')
-            ->add('Date_creation')
             ->add('categorie',EntityType::class,[
                 'class' => Categorie::class,
                 'choice_label' => 'nom',

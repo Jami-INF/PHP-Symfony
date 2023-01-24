@@ -1,5 +1,12 @@
-<h1>Home</h1>
-<li>
-    <a href="{{ path('app_hello_name') }}">HelloWorld</a>
-    <a href="{{ path('app_annonces') }}" >Annonce</a>
-</li>
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+    <h1>Home</h1>
+    <div class="card-item">
+        <p>Welcome !</p>
+    </div>
+    
+{% endblock %}

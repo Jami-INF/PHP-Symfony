@@ -40,6 +40,8 @@ class AnnoncesController extends AbstractController
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $annonce = $form->getData();
+            $annonce->setDateCreation(new \DateTime());
+            
             $em->persist($annonce);
             $em->flush();
 
